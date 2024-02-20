@@ -1,4 +1,7 @@
+import {Component} from 'react'
+
 import './App.css'
+import PlayListItem from './components/PlayListItem'
 
 const initialTracksList = [
   {
@@ -85,6 +88,8 @@ const initialTracksList = [
 
 // Replace your code here
 
-const App = () => <h1>Hello World!</h1>
+class App extends Component {
+  state = {trackList: initialTracksList}
+}
 
 export default App
