@@ -1,7 +1,8 @@
 import {Component} from 'react'
+import {MdSearch} from 'react-icons/md'
 
 import './App.css'
-import PlayListItem from './components/PlayListItem'
+import TrackItem from './components/TrackItem'
 
 const initialTracksList = [
   {
@@ -89,7 +90,64 @@ const initialTracksList = [
 // Replace your code here
 
 class App extends Component {
-  state = {trackList: initialTracksList}
+  state = {trackList: initialTracksList, searchInput: ''}
+
+  onChangeInput = event => {
+    this.setState({searchInput: event.target.value})
+  }
+
+  deleteTrack = trackId => {
+    const {trackList} = this.state
+    const filterTracks = trackList.filter(track => track.id !== trackId)
+
+    this.setState({trackList: filterTracks})
+  }
+
+  render() {
+    const {trackList, searchInput} = this.state
+
+    const finalTracksList = trackList.filter(track =>
+      track.name.toLowerCase().includes(searchInput),
+    )
+
+    const condition = finalTracksList.length || false
+
+    return (
+      <div className="app-container">
+        <div className="header">
+          <h1 className="header-title">Ed Sheeran</h1>
+          <p className="header-caption">Singer</p>
+          <div className="header-lower">
+            <h2 className="lower-title">Songs Playlist</h2>
+            <div className="search-card">
+              <input
+                type="search"
+                placeholder="Search"
+                value={searchInput}
+                onChange={this.onChangeInput}
+              />
+              <MdSearch className="search-icon" />
+            </div>
+          </div>
+        </div>
+        <div className="footer-section">
+          {condition ? (
+            <ul className="track-items-list">
+              {finalTracksList.map(track => (
+                <TrackItem
+                  key={track.id}
+                  trackDetails={track}
+                  deleteTrack={this.deleteTrack}
+                />
+              ))}
+            </ul>
+          ) : (
+            <p className="not-found-msg">No Songs Found</p>
+          )}
+        </div>
+      </div>
+    )
+  }
 }
 
 export default App
