@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  font-family: 'Roboto';
 }
 
 body {
@@ -9,4 +10,64 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.app-container {
+  height: 100vh;
+  background-color: #152850;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.header {
+  background-image: url('https://assets.ccbp.in/frontend/react-js/music-playlist/music-playlist-Edsheeran-bg.png');
+  background-size: cover;
+  width: 100%;
+  height: 219px;
+  padding: 11px 27px;
+  display: flex;
+  align-items: flex-end;
+  color: #ffffff;
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.footer-search-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  color: #ffffff;
+}
+
+.search-card {
+  border: solid 1.1px #ffffff;
+  border-radius: 3px;
+  /* padding: 2px 5px; */
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: #ffffff;
+  padding-left: 7px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.track-items-list {
+  padding-left: 0;
+  width: 89%;
+  overflow: scroll;
 }

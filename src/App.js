@@ -115,22 +115,26 @@ class App extends Component {
     return (
       <div className="app-container">
         <div className="header">
-          <h1 className="header-title">Ed Sheeran</h1>
-          <p className="header-caption">Singer</p>
-          <div className="header-lower">
-            <h2 className="lower-title">Songs Playlist</h2>
+          <div>
+            <h1 className="header-title">Ed Sheeran</h1>
+            <p className="header-caption">Singer</p>
+          </div>
+        </div>
+        <div className="footer-section">
+          <div className="footer-search-section">
+            <h4 className="lower-title">Songs Playlist</h4>
             <div className="search-card">
               <input
                 type="search"
                 placeholder="Search"
                 value={searchInput}
                 onChange={this.onChangeInput}
+                className="search-input"
               />
               <MdSearch className="search-icon" />
             </div>
           </div>
-        </div>
-        <div className="footer-section">
+
           {condition ? (
             <ul className="track-items-list">
               {finalTracksList.map(track => (

@@ -1,0 +1,52 @@
+* {
+  font-family: 'Roboto';
+}
+
+.track-item {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+}
+
+.track-left-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 35%;
+}
+
+.track-image {
+  width: 45%;
+}
+
+.track-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.track-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.track-genre {
+  font-size: 13px;
+  font-weight: 500;
+  color: #3b82f6;
+}
+
+.track-right-section {
+  display: flex;
+  align-items: center;
+}
+
+.delete-button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
