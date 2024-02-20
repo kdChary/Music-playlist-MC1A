@@ -69,5 +69,5 @@ body {
 .track-items-list {
   padding-left: 0;
   width: 89%;
-  overflow: scroll;
+  overflow-y: auto;
 }
